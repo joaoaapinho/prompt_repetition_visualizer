@@ -54,7 +54,7 @@ $$\bar{A} = \frac{1}{L \cdot H} \sum_{l=1}^{L} \sum_{h=1}^{H} A^{(l,h)} \in \mat
 
 For the repeated prompt `[prompt | prompt]`, the input length doubles to $2n$. The full attention matrix $\bar{A} \in \mathbb{R}^{2n \times 2n}$ is partitioned into four $n \times n$ blocks:
 
-$$\bar{A} = \begin{pmatrix} A^{\text{c1→c1}} & 0 \\ A^{\text{cross}} & A^{\text{c2→c2}} \end{pmatrix}$$
+$$\bar{A} = \begin{pmatrix} A^{c_1 \to c_1} & 0 \\ A^{\text{cross}} & A^{c_2 \to c_2} \end{pmatrix}$$
 
 The upper-right block is zero by the causal mask. The two blocks of interest are:
 
@@ -88,7 +88,7 @@ $$C_i = \sum_{j \,\in\, \text{top-}k(\hat{A}_{i,\cdot})} \hat{A}_{i,j}$$
 ## Key Findings
 
 **1. Repetition unlocks de-facto bidirectional context**
-In the baseline, the causal mask restricts token $i$ to attend only to positions $j \leq i$. When the prompt is doubled, every copy-2 token can attend to every copy-1 token - including tokens that appear later in the original sequence — without any architecture change.
+In the baseline, the causal mask restricts token $i$ to attend only to positions $j \leq i$. When the prompt is doubled, every copy-2 token can attend to every copy-1 token - including tokens that appear later in the original sequence - without any architecture change.
 
 **2. Early-token attention dominance shifts**
 In the baseline, early query tokens are forced to concentrate their attention mass on a small number of available keys, creating an artificial dominance pattern. In the cross-copy condition, attention distributes more evenly across all $n$ keys, making semantically richer and later-occurring tokens reachable from any query position.
@@ -116,4 +116,3 @@ python prompt_repetition_visualizer.py
 ```
 
 App serves at **http://localhost:8080**. First run downloads GPT-2 (~500 MB, cached after that).
-
