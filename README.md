@@ -2,7 +2,7 @@
   <img src="misc/attention_vis.png" alt="Attention Visualizer" width="10%">
 </p>
 
-<h1 align="center"> 🔄 Prompt Repetition: Real GPT-2 Attention Visualizer</h1>
+<h2 align="center"> Prompt Repetition: Real GPT-2 Attention Visualizer</h2>
 <h3 align="center">Bi-Directional Attention Matrix Visualizer - Baseline vs Repeated Prompting</h3>
 
 <p align="center">
