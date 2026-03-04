@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="misc/attention_vis.png" alt="Attention Visualizer" width="40%">
+  <img src="misc/attention_vis.png" alt="Attention Visualizer" width="10%">
 </p>
 
 <h1 align="center"> 🔄 Prompt Repetition: Real GPT-2 Attention Visualizer</h1>
@@ -21,6 +21,10 @@ According to the paper, `[prompt | prompt]` format in non-resoning LLMs wins on 
 
 ## Scope
 
+<p align="center">
+  <img src="misc/visualizer_demo.gif" alt="Visualizer Demo" width="90%">
+</p>
+
 | Panel | What it displays |
 |---|---|
 | Baseline | Standard causal (lower-triangular) attention for a single prompt |
@@ -29,11 +33,6 @@ According to the paper, `[prompt | prompt]` format in non-resoning LLMs wins on 
 | Self-copy | Copy-2 attending to itself |
 | Magnitude | Absolute shift — which token pairs change most |
 | Entropy chart | Attention focus vs. diffuseness per token, baseline vs. repeated |
-
-
-<p align="left">
-  <img src="misc/visualizer_demo.gif" alt="Visualizer Demo" width="70%">
-</p>
 
 ---
 
