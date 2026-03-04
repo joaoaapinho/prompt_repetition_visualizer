@@ -79,7 +79,7 @@ Normalised Shannon entropy per query token (0 = fully focused, 1 = uniform):
 
 $$H_i = \frac{-\displaystyle\sum_j \hat{A}_{i,j} \log \hat{A}_{i,j}}{\log n}$$
 
-Top-$$k$$ concentration (fraction of attention mass on the $k = 3$ most-attended keys):
+Top-K concentration (fraction of attention mass on the $k = 3$ most-attended keys):
 
 $$C_i = \sum_{j \,\in\, \text{top-}k(\hat{A}_{i,\cdot})} \hat{A}_{i,j}$$
 
@@ -97,7 +97,7 @@ In the baseline, early query tokens are forced to concentrate their attention ma
 Early query tokens in the baseline show very low $H_i$ simply because few keys are in range - the distribution is narrow by construction, not by choice. Cross-copy entropy is higher on average but more consistent across positions, reflecting genuinely unconstrained access rather than forced sparsity.
 
 **4. Repetition equalises attention concentration across token positions**
-The top-3 concentration $$C_i$$ becomes more uniform across all prompt words under repetition. This matters most for retrieval and index-lookup tasks, where the relevant key may be far from the query in the original sequence.
+The top-3 concentration becomes more uniform across all prompt words under repetition. This matters most for retrieval and index-lookup tasks, where the relevant key may be far from the query in the original sequence.
 
 ---
 
