@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/Matplotlib-3.7+-11557c" alt="Matplotlib">
 </p>
 
-Based on *[Prompt Repetition Improves Non-Reasoning LLMs](https://arxiv.org/pdf/2512.14982)* — Leviathan, Kalman & Matias (Google Research, Dec 2025).
+Based on *[Prompt Repetition Improves Non-Reasoning LLMs](https://arxiv.org/pdf/2512.14982)* - Leviathan, Kalman & Matias (Google Research, Dec 2025).
 
 According to the paper, `[prompt | prompt]` format in non-resoning LLMs wins on **47/70** benchmark-model combinations with no fine-tuning or extra inference calls. By running **GPT-2 small** (124M params) this tool attempts to visualize the real attention matrices behind that gain.
 
@@ -28,10 +28,10 @@ According to the paper, `[prompt | prompt]` format in non-resoning LLMs wins on 
 | Panel | What it displays |
 |---|---|
 | Baseline | Standard causal (lower-triangular) attention for a single prompt |
-| Cross-copy | Copy-2 attending to Copy-1 — the new channel repetition unlocks |
+| Cross-copy | Copy-2 attending to Copy-1 - the new channel repetition unlocks |
 | Difference | Row-normalized gain/loss per token pair (green = gained, red = lost) |
 | Self-copy | Copy-2 attending to itself |
-| Magnitude | Absolute shift — which token pairs change most |
+| Magnitude | Absolute shift - which token pairs change most |
 | Entropy chart | Attention focus vs. diffuseness per token, baseline vs. repeated |
 
 ---
@@ -63,7 +63,7 @@ $$A^{\text{self}} = \bar{A}[n{:}2n,\; n{:}2n] \qquad \text{(copy-2 queries → c
 
 ### 3. Row normalisation
 
-$A^{\text{cross}}$ rows sum to $\approx 0.5$ — the softmax is computed over $2n$ positions but only $n$ keys are in range. Both matrices are row-normalised before comparison so each distribution sums to 1:
+$A^{\text{cross}}$ rows sum to $\approx 0.5$ - the softmax is computed over $2n$ positions but only $n$ keys are in range. Both matrices are row-normalised before comparison so each distribution sums to 1:
 
 $$\hat{A}_{i,\cdot} = \frac{A_{i,\cdot}}{\displaystyle\sum_k A_{i,k}}$$
 
