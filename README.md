@@ -58,7 +58,7 @@ $$\bar{A} = \frac{1}{L \cdot H} \sum_{l=1}^{L} \sum_{h=1}^{H} A^{(l,h)} \in \mat
 
 For the repeated prompt `[prompt | prompt]`, the input length doubles to $2n$. The full attention matrix $\bar{A} \in \mathbb{R}^{2n \times 2n}$ is partitioned into four $n \times n$ blocks:
 
-$$\bar{A} = \begin{pmatrix} A^{c_1 \to c_1} & 0 \\ A^{\text{cross}} & A^{c_2 \to c_2} \end{pmatrix}$$
+$$\bar{A} = \begin{pmatrix} A^{c_1 \to c_1} & 0 \\\\ A^{\text{cross}} & A^{c_2 \to c_2} \end{pmatrix}$$
 
 The upper-right block is zero by the causal mask. The two blocks of interest are:
 
