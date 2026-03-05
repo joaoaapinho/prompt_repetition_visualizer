@@ -17,6 +17,8 @@ Based on *[Prompt Repetition Improves Non-Reasoning LLMs](https://arxiv.org/pdf/
 
 According to the paper, `[prompt | prompt]` format in non-resoning LLMs wins on **47/70** benchmark-model combinations with no fine-tuning or extra inference calls. By running **GPT-2 small** (124M params) this tool attempts to visualize the real attention matrices behind that gain.
 
+🤗 [Experiment this Space here](https://huggingface.co/spaces/joaoaapinho/prompt_repetition_visualizer) 🤗
+
 ---
 
 ## Scope
